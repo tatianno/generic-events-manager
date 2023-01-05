@@ -1,0 +1,5 @@
+generic_events_manager.egg-info/
+build/
+dist/
+venv/
+__pycache__/
