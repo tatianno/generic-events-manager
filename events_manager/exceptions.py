@@ -1,4 +1,4 @@
-class ObjectsFactoryNotDefined(Exception):
+class ObjectsFactoryNotImplemented(Exception):
     pass
 
 class ObjectDoesExists(Exception):
