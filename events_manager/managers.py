@@ -4,12 +4,14 @@ from events_manager.entities import GenericObject, GenericObserver
 
 
 class GenericEventsManager():
-    _objects_dict = {}
 
     class EventObject(GenericObject):
         observer_class = GenericObserver
         last_state = None
         last_update = datetime.now()
+    
+    def __init__(self):
+        self._objects_dict = {}
 
     def _observers_obj_update_event(self, obj_new_state: EventObject, obj_old_state: EventObject) -> None:
         
@@ -43,6 +45,9 @@ class GenericEventsManager():
 
     def exists(self, obj_key: str) -> EventObject:
         return obj_key  in self._objects_dict
+    
+    def all(self) -> list:
+        return [self._objects_dict[key] for key in self._objects_dict]
         
     def get(self, obj_key: str) -> EventObject:
         if not self.exists(obj_key):
