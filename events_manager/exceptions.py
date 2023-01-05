@@ -1,4 +1,4 @@
-class ObjectsFactoryNotImplemented(Exception):
+class InvalidObserver(Exception):
     pass
 
 class ObjectDoesExists(Exception):
