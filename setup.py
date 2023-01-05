@@ -17,7 +17,7 @@ with open("README.md", "r") as arq:
 
 setup(
     name='generic-events-manager',
-    version='0.0.3',
+    version='0.0.4',
     license='MIT License',
     author='Tatianno Alves',
     long_description=readme,

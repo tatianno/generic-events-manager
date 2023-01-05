@@ -13,10 +13,10 @@ class GenericEventsManager():
     def __init__(self):
         self._objects_dict = {}
 
-    def _observers_obj_update_event(self, obj_new_state: EventObject, obj_old_state: EventObject) -> None:
+    def _observers_obj_update_event(self, new_obj: EventObject, old_obj: EventObject) -> None:
         
-        for observer in obj_new_state.observers:
-            observer._exec_routine_update_obj(obj_new_state, obj_old_state)
+        for observer in new_obj.observers:
+            observer._exec_routine_update_obj(new_obj, old_obj)
     
     def _observers_obj_delete_event(self, obj: EventObject) -> None:
         
