@@ -67,7 +67,7 @@ data = {
 }
 
 # Updating the object with the received event data
-events_manager.event_update(data)
+response = events_manager.event_update(data)
 
 # Subscribing observer
 obj = events_manager.get('k1')
@@ -80,7 +80,7 @@ data = {
 }
 
 # Updating the object with the received event data
-events_manager.event_update(data)
+response = events_manager.event_update(data)
 
 # Deleting object
 obj = events_manager.get('k1')

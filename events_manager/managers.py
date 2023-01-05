@@ -10,6 +10,12 @@ class GenericEventsManager():
         last_state = None
         last_update = datetime.now()
     
+    class EventResponse:
+        
+        def __init__(self, event_obj, created=False):
+            self.event_obj = event_obj
+            self.created = created
+    
     def __init__(self):
         self._objects_dict = {}
 
@@ -73,11 +79,13 @@ class GenericEventsManager():
         
         return new_obj
     
-    def event_update(self, data: dict) -> None:
+    def event_update(self, data: dict) -> EventResponse:
         new_obj = self.get_factory_object(data)
 
         if not self.exists(new_obj.get_key()):
             self.create(new_obj)
+            return self.EventResponse(new_obj, created=True)
         
         else:
             self.update(new_obj)
+            return self.EventResponse(new_obj)

@@ -34,13 +34,13 @@ data = {
     'state' : 'ON',
     'key' : 'k1'
 }
-events_manager.event_update(data)
+response = events_manager.event_update(data)
 obj = events_manager.get('k1')
 obj.subscribe(observer)
 data = {
     'state' : 'OFF',
     'key' : 'k1'
 }
-events_manager.event_update(data)
+response = events_manager.event_update(data)
 obj = events_manager.get('k1')
 events_manager.delete(obj)
